@@ -122,3 +122,46 @@ let x = 10; // TypeScript infers x as number type
       
       
       
+class Rectangle {
+    constructor(public width: number, public height: number) {}
+  
+    getArea(): number {
+      return this.width * this.height;
+    }
+  }
+  
+  let rectangle = new Rectangle(10, 5);
+  console.log(rectangle.getArea()); // Output: 50
+
+    class Square extends Rectangle {    
+        constructor(public side: number) {
+          super(side, side);
+        }
+      }
+
+        let square = new Square(5);
+        console.log(square.getArea()); // Output: 25
+    
+        class PersonClass {
+            constructor(public name: string, public age: number) {}
+          
+            getDetails(): string {
+              return `Name: ${this.name}, Age: ${this.age}`;
+            }
+          }
+
+
+        //   Type Guards
+
+          function processValue(value: string | number) {
+            if (typeof value === "string") {
+              console.log(value.toUpperCase()); // Access string-specific methods
+            } else {
+              console.log(value.toFixed(2)); // Access number-specific methods
+            }
+          }
+          
+          processValue("Hello"); // Output: HELLO
+          processValue(3.14159); // Output: 3.14
+          
+    
