@@ -186,7 +186,29 @@ class Rectangle {
           // Hello, TypeScript!
           // Function called.
 
+
+          // function composition
           
+          function add(a: number, b: number): number {
+            return a + b;
+          }
           
+          function multiply(a: number, b: number): number {
+            return a * b;
+          }
+
+
           
+
+          function compose<T>(...funcs: Array<(arg: T) => T>): (arg: T) => T {
+            return (arg: T) => funcs.reduce((result, func) => func(result), arg);
+          }
+          
+          const addAndMultiply = compose(
+            (value: number) => add(value, 10),
+            (value: number) => multiply(value, 2)
+
+          );
+
+          console.log(addAndMultiply(5)); // Output: 30
     
