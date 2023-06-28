@@ -53,4 +53,49 @@ function greet(name: string): string {
       
       let john: Person = { name: "John", age: 30 };
       console.log(getPersonInfo(john)); // Output: Name: John, Age: 30
+
+
+      interface PersonInteface {
+        name: string;
+        age?: number;
+      }
+      
+      function printPerson(person: PersonInteface): void {
+        console.log(`Name: ${person.name}`);
+        if (person.age !== undefined) {
+          console.log(`Age: ${person.age}`);
+        }
+      }
+      
+      const person1: PersonInteface = { name: "John" };
+      const person2: PersonInteface = { name: "Jane", age: 25 };
+      
+      printPerson(person1);
+      // Output: Name: John
+      
+      printPerson(person2);
+      // Output: Name: Jane
+      // Age: 25
+
+
+
+      function reverse<T>(items: T[]): T[] {
+        return items.reverse();
+      }
+      
+      let sumeNumbers: number[] = [1, 2, 3, 4, 5];
+      console.log(reverse(sumeNumbers)); // Output: [5, 4, 3, 2, 1]
+
+        let names: string[] = ["John", "Jane", "Mary", "Marko"];
+        console.log(reverse(names)); // Output: ["Marko", "Mary", "Jane", "John"]
+
+        function loopOnItems<T> (items:Iterable<T>):void{
+            for(let item of items){
+                console.log(item)
+            }
+        }
+        loopOnItems(names)
+        loopOnItems(sumeNumbers)
+      
+      
       
