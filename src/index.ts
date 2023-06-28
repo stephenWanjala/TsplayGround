@@ -96,6 +96,29 @@ function greet(name: string): string {
         }
         loopOnItems(names)
         loopOnItems(sumeNumbers)
+
+
+
+        // Union Types
+let value1: string | number = "Hello";
+value1 = 10;
+
+// Intersection Types
+interface A {
+  name: string;
+}
+interface B {
+  age: number;
+}
+let person3: A & B = { name: "John", age: 30 };
+
+// Type Assertions
+let someValue: any = "Hello, TypeScript!";
+let strLength: number = (someValue as string).length;
+
+// Type Inference
+let x = 10; // TypeScript infers x as number type
+
       
       
       
