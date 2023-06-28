@@ -163,5 +163,30 @@ class Rectangle {
           
           processValue("Hello"); // Output: HELLO
           processValue(3.14159); // Output: 3.14
+
+
+          // higher order functions
+
+          function withLogging(func: () => void): () => void {
+            return () => {
+              console.log("Calling function...");
+              func();
+              console.log("Function called.");
+            };
+          }
+          
+          function sayHello() {
+            console.log("Hello, TypeScript!");
+          }
+          
+          const withLoggingSayHello = withLogging(sayHello);
+          withLoggingSayHello(); 
+          // Output:
+          // Calling function...
+          // Hello, TypeScript!
+          // Function called.
+
+          
+          
           
     
