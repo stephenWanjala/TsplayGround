@@ -29,3 +29,28 @@ console.log(color); // 0
 
 // Any
 let value: any = 10;
+
+function greet(name: string): string {
+    return `Hello, ${name}!`;
+  }
+  
+  console.log(greet("John")); // Output: Hello, John!
+
+    function sum(a: number, b: number): number {
+        return a + b
+    }
+    const  customAdd: (a: number, b: number) => number = (a, b) => a + b;
+    console.log(customAdd(1, 2)); // Output: 3
+
+    interface Person {
+        name: string;
+        age: number;
+      }
+      
+      function getPersonInfo(person: Person): string {
+        return `Name: ${person.name}, Age: ${person.age}`;
+      }
+      
+      let john: Person = { name: "John", age: 30 };
+      console.log(getPersonInfo(john)); // Output: Name: John, Age: 30
+      
